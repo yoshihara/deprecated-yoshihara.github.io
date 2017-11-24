@@ -7,20 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://github.com/yoshihara&#34;&gt;yoshihara&lt;/a&gt; 2017</copyright>
-    <lastBuildDate>Fri, 24 Nov 2017 23:54:36 +0900</lastBuildDate>
     
 	<atom:link href="https://yoshihara.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>このブログ情報まとめ</title>
-      <link>https://yoshihara.github.io/posts/276.html/</link>
-      <pubDate>Fri, 24 Nov 2017 23:54:36 +0900</pubDate>
-      
-      <guid>https://yoshihara.github.io/posts/276.html/</guid>
-      <description>  blogリポジトリ： https://github.com/yoshihara/blog ホスティングしてるGitHub Pagesのリポジトリ：https://github.com/yoshihara/yoshihara.github.io  GitHub Pagesのリポジトリをsubmoduleとしてblogリポジトリの public/ ディレクトリに置いている。
-記事作成のながれ  esaで blog/ カテゴリに記事を書いて Ship It! webhookで blog リポジトリの contents/posts/ に記事のmarkdownファイルがpushされる CircleCIがそのコミットをトリガーにしてCIを走らせる  CIの中で静的サイトジェネレータの hugo をインストール（aptで入れると古くてテンプレートが使えないのでGitHubから持ってきている） ちょっとmarkdownファイルに小細工してからインストールした hugo でサイトを（GitHub Pagesがある） public/ ディレクトリ配下に生成する submodule に対してコミット、pushする（ cd public/ &amp;amp;&amp;amp; すると親への変更になぜかみなされたので --git-dir を指定してディレクトリ移動しないようにしている。あとコミット直後にdetached HEADになるので git submodule update した後にちゃんとブランチ移動したほうがいいのかなーと思いつつそのまま）  Github Pagesのリポジトリが更新されるのでそれにしたがってこのブログも更新される  TODO  独自ドメイン もうちょいデプロイ周り綺麗にしたい  </description>
-    </item>
     
     <item>
       <title>My First Post</title>
@@ -32,6 +21,16 @@
 hi fuga
 hi piyo
 hi  thanks! (ΦωΦ)  </description>
+    </item>
+    
+    <item>
+      <title>このブログ情報まとめ</title>
+      <link>https://yoshihara.github.io/posts/276.html/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yoshihara.github.io/posts/276.html/</guid>
+      <description>  blogリポジトリ： https://github.com/yoshihara/blog ホスティングしてるGitHub Pagesのリポジトリ：https://github.com/yoshihara/yoshihara.github.io  GitHub Pagesのリポジトリをsubmoduleとしてblogリポジトリの public/ ディレクトリに置いている。
+記事作成のながれ  esaで blog/ カテゴリに記事を書いて Ship It! webhookで blog リポジトリの contents/posts/ に記事のmarkdownファイルがpushされる CircleCIがそのコミットをトリガーにしてCIを走らせる  CIの中で静的サイトジェネレータの hugo をインストール（aptで入れると古くてテンプレートが使えないのでGitHubから持ってきている） ちょっとmarkdownファイルに小細工してからインストールした hugo でサイトを（GitHub Pagesがある） public/ ディレクトリ配下に生成する submodule に対してコミット、pushする（ cd public/ &amp;amp;&amp;amp; すると親への変更になぜかみなされたので --git-dir を指定してディレクトリ移動しないようにしている。あとコミット直後にdetached HEADになるので git submodule update した後にちゃんとブランチ移動したほうがいいのかなーと思いつつそのまま）  Github Pagesのリポジトリが更新されるのでそれにしたがってこのブログも更新される  TODO  独自ドメイン もうちょいデプロイ周り綺麗にしたい  </description>
     </item>
     
   </channel>
