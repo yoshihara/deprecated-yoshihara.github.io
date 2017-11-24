@@ -11,7 +11,7 @@
 <meta property='og:description' content=''>
 <meta property='og:url' content='https://yoshihara.github.io/'>
 <meta property='og:site_name' content='hyoshi(hara) log'>
-<meta property='og:type' content='website'><meta property='article:section' content=''><meta property='og:updated_time' content='2017-11-22T21:09:29&#43;09:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hyoshihara04'><meta name='twitter:creator' content='@hyoshihara04'>
+<meta property='og:type' content='website'><meta property='article:section' content=''><meta property='og:updated_time' content='2017-11-24T23:54:36&#43;09:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hyoshihara04'><meta name='twitter:creator' content='@hyoshihara04'>
 <link rel="stylesheet" href="https://yoshihara.github.io/css/style.css"/></head>
 <body>
 
@@ -48,12 +48,22 @@
   <div class="container">
     
     <article>
-      <h2 class="subtitle is-6">November 22, 2017</h2>
+      <h2 class="subtitle is-6">November 24, 2017</h2>
+      <h1 class="title"><a href="https://yoshihara.github.io/posts/276.html/">このブログ情報まとめ</a></h1>
+      <div class="content">
+          blogリポジトリ： https://github.com/yoshihara/blog ホスティングしてるGitHub Pagesのリポジトリ：https://github.com/yoshihara/yoshihara.github.io  GitHub Pagesのリポジトリをsubmoduleとしてblogリポジトリの public/ ディレクトリに置いている。
+記事作成のながれ  esaで blog/ カテゴリに記事を書いて Ship It! webhookで blog リポジトリの contents/posts/ に記事のmarkdownファイルがpushされる CircleCIがそのコミットをトリガーにしてCIを走らせる  CIの中で静的サイトジェネレータの hugo をインストール（aptで入れると古くてテンプレートが使えないのでGitHubから持ってきている） ちょっとmarkdownファイルに小細工してからインストールした hugo でサイトを（GitHub Pagesがある） public/ ディレクトリ配下に生成する submodule に対してコミット、pushする（ cd public/ &amp;&amp; すると親への変更になぜかみなされたので --git-dir を指定してディレクトリ移動しないようにしている。あとコミット直後にdetached HEADになるので git submodule update した後にちゃんとブランチ移動したほうがいいのかなーと思いつつそのまま）  Github Pagesのリポジトリが更新されるのでそれにしたがってこのブログも更新される  TODO  独自ドメイン もうちょいデプロイ周り綺麗にしたい  
+        
+      </div>
+    </article>
+    
+    <article>
+      <h2 class="subtitle is-6">January 1, 0001</h2>
       <h1 class="title"><a href="https://yoshihara.github.io/posts/my-first-post/">My First Post</a></h1>
       <div class="content">
          hi hoge
 hi fuga
-hi bar
+hi piyo
 hi  thanks! (ΦωΦ)  
         
       </div>
