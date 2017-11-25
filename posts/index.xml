@@ -7,16 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://github.com/yoshihara&#34;&gt;yoshihara&lt;/a&gt; 2017</copyright>
+    <lastBuildDate>Fri, 24 Nov 2017 23:54:36 +0900</lastBuildDate>
     
 	<atom:link href="https://yoshihara.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>このブログ情報まとめ</title>
-      <link>https://yoshihara.github.io/posts/276.html/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://yoshihara.github.io/posts/276/</link>
+      <pubDate>Fri, 24 Nov 2017 23:54:36 +0900</pubDate>
       
-      <guid>https://yoshihara.github.io/posts/276.html/</guid>
+      <guid>https://yoshihara.github.io/posts/276/</guid>
       <description>blogリポジトリ： https://github.com/yoshihara/blog ホスティングしてるGitHub Pagesのリポジトリ：https://github.com/yoshihara/yoshihara.github.io  GitHub Pagesのリポジトリをsubmoduleとしてblogリポジトリの public/ ディレクトリに置いている。 いちいち記事を書くのにcommitしてサイト生成してpushして、という一連の作業をするのが面倒だった（体験談）のと、esaで記事を書きたかったので、esaで記事を書いたらpushされてCIでサイトをビルドしてGitHub Pagesにpushするようにした。詳しい流れは下記。
 記事作成のながれ  esa で blog/ カテゴリに記事を書いて Ship It! する webhook で blog リポジトリの contents/posts/ディレクトリ に記事の markdown ファイルが push される CircleCI がそのコミットをトリガーにして CI を走らせる  CI の中で静的サイトジェネレータの hugo をインストール（aptで入れると古くてテンプレートが使えないので GitHub から持ってきている） ちょっと markdown ファイルに小細工してからインストールした hugo でサイトを（GitHub Pagesがある） public/ ディレクトリ配下に生成する submodule に対してコミット、 push する（ cd public/ &amp;amp;&amp;amp; git hogehoge すると親への操作とみなされたので --git-dir を指定してディレクトリ移動しないようにしている。あとコミット直後にdetached HEADになるので git submodule update -i した後にmasterを明示的に見ている） GItHub Pagesの更新により、blog リポジトリの public の示す先が変わっているのでそちらをコミットしてpushする（普通にpushするとCIが走ってしまうので [ci skip] をつける）  Github Pagesのリポジトリが更新されたので、それにしたがってこのブログも更新される  小細工の内訳 hugo で記事を作るため、CIでシェルスクリプトを実行してesaがコミットしたmarkdownファイルに小細工している。</description>
     </item>
