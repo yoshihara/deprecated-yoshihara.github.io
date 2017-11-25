@@ -7,8 +7,8 @@
 <title>このブログ情報まとめ | hyoshi(hara) log</title>
 
 <meta property='og:title' content='このブログ情報まとめ - hyoshi(hara) log'>
-<meta property='og:description' content='blogリポジトリ： https://github.com/yoshihara/blog ホスティングしてるGitHub Pagesのリポジトリ：https://github.com/yoshihara/yoshihara.github.io  GitHub Pagesのリポジトリをsubmoduleとしてblogリポジトリの public/ ディレクトリに置いている。
-記事作成のながれ  esa で blog/ カテゴリに記事を書いて Ship It! する webhook で blog リポジトリの contents/posts/ディレクトリ に記事の markdown ファイルが push される CircleCI がそのコミットをトリガーにして CI を走らせる  CI の中で静的サイトジェネレータの hugo をインストール（aptで入れると古くてテンプレートが使えないので GitHub から持ってきている） ちょっと markdown ファイルに小細工してからインストールした hugo でサイトを（GitHub Pagesがある） public/ ディレクトリ配下に生成する submodule に対してコミット、 push する（ cd public/ &amp;&amp; git hogehoge すると親への操作とみなされたので --git-dir を指定してディレクトリ移動しないようにしている。あとコミット直後にdetached HEADになるので git submodule update -i した後にmasterを明示的に見ている） GItHub Pagesの更新により、blog リポジトリの public の示す先が変わっているのでそちらをコミットしてpushする（普通にpushするとCIが走ってしまうので [ci skip] をつける）  Github Pagesのリポジトリが更新されたので、それにしたがってこのブログも更新される  小細工の内訳 hugo で（個人的に）いい感じに記事を作るため、CIでシェルスクリプトを実行して小細工してます。'>
+<meta property='og:description' content='blogリポジトリ： https://github.com/yoshihara/blog ホスティングしてるGitHub Pagesのリポジトリ：https://github.com/yoshihara/yoshihara.github.io  GitHub Pagesのリポジトリをsubmoduleとしてblogリポジトリの public/ ディレクトリに置いている。 いちいち記事を書くのにcommitしてサイト生成してpushして、という一連の作業をするのが面倒だった（体験談）のと、esaで記事を書きたかったので、esaで記事を書いたらpushされてCIでサイトをビルドしてGitHub Pagesにpushするようにした。詳しい流れは下記。
+記事作成のながれ  esa で blog/ カテゴリに記事を書いて Ship It! する webhook で blog リポジトリの contents/posts/ディレクトリ に記事の markdown ファイルが push される CircleCI がそのコミットをトリガーにして CI を走らせる  CI の中で静的サイトジェネレータの hugo をインストール（aptで入れると古くてテンプレートが使えないので GitHub から持ってきている） ちょっと markdown ファイルに小細工してからインストールした hugo でサイトを（GitHub Pagesがある） public/ ディレクトリ配下に生成する submodule に対してコミット、 push する（ cd public/ &amp;&amp; git hogehoge すると親への操作とみなされたので --git-dir を指定してディレクトリ移動しないようにしている。あとコミット直後にdetached HEADになるので git submodule update -i した後にmasterを明示的に見ている） GItHub Pagesの更新により、blog リポジトリの public の示す先が変わっているのでそちらをコミットしてpushする（普通にpushするとCIが走ってしまうので [ci skip] をつける）  Github Pagesのリポジトリが更新されたので、それにしたがってこのブログも更新される  小細工の内訳 hugo で記事を作るため、CIでシェルスクリプトを実行してesaがコミットしたmarkdownファイルに小細工している。'>
 <meta property='og:url' content='https://yoshihara.github.io/posts/276/'>
 <meta property='og:site_name' content='hyoshi(hara) log'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2017-11-24T23:54:36&#43;09:00'/><meta property='article:modified_time' content='2017-11-24T23:54:36&#43;09:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hyoshihara04'><meta name='twitter:creator' content='@hyoshihara04'>
@@ -60,7 +60,8 @@
 <li>ホスティングしてるGitHub Pagesのリポジトリ：<a href="https://github.com/yoshihara/yoshihara.github.io">https://github.com/yoshihara/yoshihara.github.io</a></li>
 </ul>
 
-<p>GitHub Pagesのリポジトリをsubmoduleとしてblogリポジトリの <code>public/</code> ディレクトリに置いている。</p>
+<p>GitHub Pagesのリポジトリをsubmoduleとしてblogリポジトリの <code>public/</code> ディレクトリに置いている。
+いちいち記事を書くのにcommitしてサイト生成してpushして、という一連の作業をするのが面倒だった（体験談）のと、esaで記事を書きたかったので、esaで記事を書いたらpushされてCIでサイトをビルドしてGitHub Pagesにpushするようにした。詳しい流れは下記。</p>
 
 <h2 id="記事作成のながれ">記事作成のながれ</h2>
 
@@ -80,7 +81,7 @@
 
 <h3 id="小細工の内訳">小細工の内訳</h3>
 
-<p>hugo で（個人的に）いい感じに記事を作るため、CIでシェルスクリプトを実行して小細工してます。</p>
+<p>hugo で記事を作るため、CIでシェルスクリプトを実行してesaがコミットしたmarkdownファイルに小細工している。</p>
 
 <ul>
 <li>ファイル内の <code>^created_at:</code> を <code>date:</code> に置き換える
@@ -95,12 +96,13 @@
 </ul></li>
 </ul>
 
-<p>ファイル名の取得は <code>git show HEAD --diff-filter=AM --name-only --pretty=format:''</code> でやってる。</p>
+<p>ファイル名の取得は <code>git show HEAD --diff-filter=AM --name-only --pretty=format:''</code> でやってる。あくまでサイト生成用の一時ファイルを作成する、という方向なのでリポジトリにpushはしていない。</p>
 
 <h2 id="todo">TODO</h2>
 
 <ul>
-<li>独自ドメイン</li>
+<li><del>独自ドメイン</del></li>
+<li>httpsしたい</li>
 <li>もうちょいデプロイ周り綺麗にしたい</li>
 </ul>
 
