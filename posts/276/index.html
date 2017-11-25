@@ -8,7 +8,7 @@
 
 <meta property='og:title' content='このブログ情報まとめ - hyoshi(hara) log'>
 <meta property='og:description' content='blogリポジトリ： https://github.com/yoshihara/blog ホスティングしてるGitHub Pagesのリポジトリ：https://github.com/yoshihara/yoshihara.github.io  GitHub Pagesのリポジトリをsubmoduleとしてblogリポジトリの public/ ディレクトリに置いている。
-記事作成のながれ  esa で blog/ カテゴリに記事を書いて Ship It! する webhook で blog リポジトリの contents/posts/ディレクトリ に記事の markdown ファイルが push される CircleCI がそのコミットをトリガーにして CI を走らせる  CI の中で静的サイトジェネレータの hugo をインストール（aptで入れると古くてテンプレートが使えないので GitHub から持ってきている） ちょっと markdown ファイルに小細工してからインストールした hugo でサイトを（GitHub Pagesがある） public/ ディレクトリ配下に生成する submodule に対してコミット、 push する（ cd public/ &amp;&amp; すると親への変更になぜかみなされたので --git-dir を指定してディレクトリ移動しないようにしている。あとコミット直後にdetached HEADになるので git submodule update -i した後にmasterを明示的に見ている） GItHub Pagesの更新により、blog リポジトリの public の示す先が変わっているのでそちらをコミットしてpushする（普通にpushするとCIが走ってしまうので [ci skip] をつける）  Github Pagesのリポジトリが更新されたので、それにしたがってこのブログも更新される  小細工の内訳 hugo で（個人的に）いい感じに記事を作るため、CIでシェルスクリプトを実行して小細工してます。'>
+記事作成のながれ  esa で blog/ カテゴリに記事を書いて Ship It! する webhook で blog リポジトリの contents/posts/ディレクトリ に記事の markdown ファイルが push される CircleCI がそのコミットをトリガーにして CI を走らせる  CI の中で静的サイトジェネレータの hugo をインストール（aptで入れると古くてテンプレートが使えないので GitHub から持ってきている） ちょっと markdown ファイルに小細工してからインストールした hugo でサイトを（GitHub Pagesがある） public/ ディレクトリ配下に生成する submodule に対してコミット、 push する（ cd public/ &amp;&amp; git hogehoge すると親への操作とみなされたので --git-dir を指定してディレクトリ移動しないようにしている。あとコミット直後にdetached HEADになるので git submodule update -i した後にmasterを明示的に見ている） GItHub Pagesの更新により、blog リポジトリの public の示す先が変わっているのでそちらをコミットしてpushする（普通にpushするとCIが走ってしまうので [ci skip] をつける）  Github Pagesのリポジトリが更新されたので、それにしたがってこのブログも更新される  小細工の内訳 hugo で（個人的に）いい感じに記事を作るため、CIでシェルスクリプトを実行して小細工してます。'>
 <meta property='og:url' content='https://yoshihara.github.io/posts/276/'>
 <meta property='og:site_name' content='hyoshi(hara) log'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2017-11-24T23:54:36&#43;09:00'/><meta property='article:modified_time' content='2017-11-24T23:54:36&#43;09:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hyoshihara04'><meta name='twitter:creator' content='@hyoshihara04'>
@@ -72,7 +72,7 @@
 <ol>
 <li>CI の中で静的サイトジェネレータの <code>hugo</code> をインストール（aptで入れると古くてテンプレートが使えないので GitHub から持ってきている）</li>
 <li>ちょっと markdown ファイルに小細工してからインストールした hugo でサイトを（GitHub Pagesがある） <code>public/</code> ディレクトリ配下に生成する</li>
-<li>submodule に対してコミット、 push する（ <code>cd public/ &amp;&amp;</code> すると親への変更になぜかみなされたので <code>--git-dir</code> を指定してディレクトリ移動しないようにしている。あとコミット直後にdetached HEADになるので <code>git submodule update -i</code> した後にmasterを明示的に見ている）</li>
+<li>submodule に対してコミット、 push する（ <code>cd public/ &amp;&amp; git hogehoge</code> すると親への操作とみなされたので <code>--git-dir</code> を指定してディレクトリ移動しないようにしている。あとコミット直後にdetached HEADになるので <code>git submodule update -i</code> した後にmasterを明示的に見ている）</li>
 <li>GItHub Pagesの更新により、blog リポジトリの <code>public</code> の示す先が変わっているのでそちらをコミットしてpushする（普通にpushするとCIが走ってしまうので <code>[ci skip]</code> をつける）</li>
 </ol></li>
 <li>Github Pagesのリポジトリが更新されたので、それにしたがってこのブログも更新される</li>

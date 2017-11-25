@@ -19,7 +19,7 @@
       
       <guid>https://yoshihara.github.io/posts/276/</guid>
       <description>blogリポジトリ： https://github.com/yoshihara/blog ホスティングしてるGitHub Pagesのリポジトリ：https://github.com/yoshihara/yoshihara.github.io  GitHub Pagesのリポジトリをsubmoduleとしてblogリポジトリの public/ ディレクトリに置いている。
-記事作成のながれ  esa で blog/ カテゴリに記事を書いて Ship It! する webhook で blog リポジトリの contents/posts/ディレクトリ に記事の markdown ファイルが push される CircleCI がそのコミットをトリガーにして CI を走らせる  CI の中で静的サイトジェネレータの hugo をインストール（aptで入れると古くてテンプレートが使えないので GitHub から持ってきている） ちょっと markdown ファイルに小細工してからインストールした hugo でサイトを（GitHub Pagesがある） public/ ディレクトリ配下に生成する submodule に対してコミット、 push する（ cd public/ &amp;amp;&amp;amp; すると親への変更になぜかみなされたので --git-dir を指定してディレクトリ移動しないようにしている。あとコミット直後にdetached HEADになるので git submodule update -i した後にmasterを明示的に見ている） GItHub Pagesの更新により、blog リポジトリの public の示す先が変わっているのでそちらをコミットしてpushする（普通にpushするとCIが走ってしまうので [ci skip] をつける）  Github Pagesのリポジトリが更新されたので、それにしたがってこのブログも更新される  小細工の内訳 hugo で（個人的に）いい感じに記事を作るため、CIでシェルスクリプトを実行して小細工してます。</description>
+記事作成のながれ  esa で blog/ カテゴリに記事を書いて Ship It! する webhook で blog リポジトリの contents/posts/ディレクトリ に記事の markdown ファイルが push される CircleCI がそのコミットをトリガーにして CI を走らせる  CI の中で静的サイトジェネレータの hugo をインストール（aptで入れると古くてテンプレートが使えないので GitHub から持ってきている） ちょっと markdown ファイルに小細工してからインストールした hugo でサイトを（GitHub Pagesがある） public/ ディレクトリ配下に生成する submodule に対してコミット、 push する（ cd public/ &amp;amp;&amp;amp; git hogehoge すると親への操作とみなされたので --git-dir を指定してディレクトリ移動しないようにしている。あとコミット直後にdetached HEADになるので git submodule update -i した後にmasterを明示的に見ている） GItHub Pagesの更新により、blog リポジトリの public の示す先が変わっているのでそちらをコミットしてpushする（普通にpushするとCIが走ってしまうので [ci skip] をつける）  Github Pagesのリポジトリが更新されたので、それにしたがってこのブログも更新される  小細工の内訳 hugo で（個人的に）いい感じに記事を作るため、CIでシェルスクリプトを実行して小細工してます。</description>
     </item>
     
     <item>
