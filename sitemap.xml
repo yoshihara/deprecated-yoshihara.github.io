@@ -3,8 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://yoshihara.github.io/posts/276/</loc>
-    <lastmod>2017-11-24T23:54:36+09:00</lastmod>
+    <loc>https://yoshihara.github.io/posts/277/</loc>
+    <lastmod>2017-11-26T19:43:06+09:00</lastmod>
   </url>
   
   <url>
@@ -14,7 +14,7 @@
   
   <url>
     <loc>https://yoshihara.github.io/posts/</loc>
-    <lastmod>2017-11-24T23:54:36+09:00</lastmod>
+    <lastmod>2017-11-26T19:43:06+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -25,8 +25,12 @@
   
   <url>
     <loc>https://yoshihara.github.io/</loc>
-    <lastmod>2017-11-24T23:54:36+09:00</lastmod>
+    <lastmod>2017-11-26T19:43:06+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoshihara.github.io/posts/276.html/</loc>
   </url>
   
 </urlset>
